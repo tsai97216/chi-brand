@@ -1,0 +1,63 @@
+:root {
+  /* Chi ecosystem brand colors */
+  --chi-brand: #356AE6;
+  --chi-nav: #1687E8;
+  --chi-merch: #0FA3A3;
+
+  /* Shared semantic roles. Products may map their site color to --brand. */
+  --brand: var(--chi-brand);
+  --brand-hover: #285ACF;
+  --brand-active: #214FBA;
+  --brand-soft: #EAF0FF;
+  --brand-border: #BFD0FF;
+  --brand-text: #23499F;
+}
+
+[data-brand="nav"] {
+  --brand: var(--chi-nav);
+  --brand-hover: #0F74CC;
+  --brand-active: #0B65B5;
+  --brand-soft: #E7F4FF;
+  --brand-border: #B8DFFF;
+  --brand-text: #075B9F;
+}
+
+[data-brand="merch"] {
+  --brand: var(--chi-merch);
+  --brand-hover: #0B8E8E;
+  --brand-active: #087D7D;
+  --brand-soft: #E5F7F7;
+  --brand-border: #B5E2E2;
+  --brand-text: #087070;
+}
+
+/*
+ * Dark-mode semantic roles.
+ * Product repositories should provide their own surface/text tokens and
+ * consume these brand roles rather than overriding raw brand colors inline.
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --brand-hover: #5C88F0;
+    --brand-active: #7399F3;
+    --brand-soft: #18284A;
+    --brand-border: #3E5FA8;
+    --brand-text: #B8C9FF;
+  }
+
+  [data-brand="nav"] {
+    --brand-hover: #4AA8F2;
+    --brand-active: #68B8F5;
+    --brand-soft: #142D42;
+    --brand-border: #386C92;
+    --brand-text: #A9D8FA;
+  }
+
+  [data-brand="merch"] {
+    --brand-hover: #39BDBD;
+    --brand-active: #5ACACA;
+    --brand-soft: #143434;
+    --brand-border: #367979;
+    --brand-text: #A4E5E5;
+  }
+}
